@@ -6,5 +6,5 @@ Feature -
     case filing system
     emergency services system
     authentication system
-    a log of all the emergency services such as health aid centers to contact during emergency
+    a log of all th e emergency services such as health aid centers to contact during emergency
     
