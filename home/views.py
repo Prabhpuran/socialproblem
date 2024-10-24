@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from .forms import CustomUserCreationForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
 from .forms import CaseForm
 
 # User registration view
@@ -25,9 +26,10 @@ def user_login(request):
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user = authenticate(request, username=username, password=password)
+            # return redirect('dashboard.html')
             if user is not None:
                 login(request, user)
-                return redirect('home')
+                return redirect('login.html')
     else:
         form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
@@ -37,6 +39,11 @@ def user_login(request):
 def dashboard(request):
     return render(request, 'dashboard.html')
 
+@login_required
+@require_POST
+def user_logout(request):
+    logout(request)
+    return redirect('login.html')
 
 # def register(request):
 #     if request.method == "POST":
@@ -44,13 +51,13 @@ def dashboard(request):
 #         if form.is_valid():
 #             user = form.save()
 #             login(request, user)
-#             return redirect('home')
+#             return redirect('dashboard.html')
 #     else:
 #         form = CustomUserCreationForm()
 #     return render(request, 'register.html', {'form': form})
 
-# def home(request):
-#     return render(request, 'home.html')
+def home(request):
+    return render(request, 'dashboard.html')
 
 @login_required
 def file_case(request):
