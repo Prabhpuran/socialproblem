@@ -1,0 +1,10 @@
+Making a social platform to solve the problems of domestic cases such as dowry, domestic abuse etc.
+This platform will not only provide the legal services but all also the emergency services such as health aid or the need of a shelter.
+We also target the old aged who are not being treated right or even the underpreviliged.
+Feature - 
+    registeration system
+    case filing system
+    emergency services system
+    authentication system
+    a log of all the emergency services such as health aid centers to contact during emergency
+    
