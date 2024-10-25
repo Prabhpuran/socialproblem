@@ -6,7 +6,8 @@ class Case(models.Model):
     CATEGORY_CHOICES = [
         ('MR', 'Marital Rape'),
         ('DA', 'Domestic Abuse'),
-        ('DW', 'Dowry Issues')
+        ('DW', 'Dowry Issues'),
+        ('MA', 'Mental Harrasment')
     ]
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     category = models.CharField(max_length=2, choices=CATEGORY_CHOICES)
@@ -21,9 +22,9 @@ class Case(models.Model):
 # core/models.py
 class EmergencyService(models.Model):
     service_name = models.CharField(max_length=255)
-    contact_number = models.CharField(max_length=20)
+    contact_number = models.CharField(max_length=13)
     service_type = models.CharField(max_length=100, choices=[('Shelter', 'Shelter'), ('Legal Aid', 'Legal Aid'), ('Medical', 'Medical'), ('Helpline', 'Helpline'), ('Police Aid','Police Aid')])
-    location = models.CharField(max_length=255, blank=True)
+    location = models.CharField(max_length=255, blank=True),
 
     def __str__(self):
         return self.service_name
