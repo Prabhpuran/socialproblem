@@ -5,6 +5,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from .forms import CaseForm
+from .models import EmergencyService
 
 # User registration view
 def register(request):
@@ -13,7 +14,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('dashboard.html')
+            return redirect('dashboard')
     else:
         form = CustomUserCreationForm()
     return render(request, 'register.html', {'form': form})
@@ -75,4 +76,5 @@ def file_case(request):
 # # core/views.py
 def emergency_services(request):
     services = EmergencyService.objects.all()
+    print(services)
     return render(request, 'emergency_services.html', {'services': services})

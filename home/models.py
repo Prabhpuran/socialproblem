@@ -22,7 +22,7 @@ class Case(models.Model):
 class EmergencyService(models.Model):
     service_name = models.CharField(max_length=255)
     contact_number = models.CharField(max_length=20)
-    service_type = models.CharField(max_length=100, choices=[('Shelter', 'Shelter'), ('Legal Aid', 'Legal Aid'), ('Medical', 'Medical'), ('Helpline', 'Helpline')])
+    service_type = models.CharField(max_length=100, choices=[('Shelter', 'Shelter'), ('Legal Aid', 'Legal Aid'), ('Medical', 'Medical'), ('Helpline', 'Helpline'), ('Police Aid','Police Aid')])
     location = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
