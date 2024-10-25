@@ -116,7 +116,7 @@ def volunteers(request):
         form = VolunteersForm(request.POST)
         if form.is_valid():
             form.save(commit=False)
-            return redirect('volunteers_suceess')
+            return redirect('volunteer_suceess')
     else:
         form = VolunteersForm()
     return render(request, 'volunteers.html', {'form': form})
