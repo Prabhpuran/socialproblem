@@ -78,3 +78,18 @@ def emergency_services(request):
     services = EmergencyService.objects.all()
     print(services)
     return render(request, 'emergency_services.html', {'services': services})
+
+def help(request):
+    return render(request, 'help.html')
+
+def mental_tips(request):
+    return render(request, 'mental_tips.html')
+
+def resources(request):
+    return render(request, 'resources.html')
+
+def volunteers(request):
+    return render(request, 'volunteers.html')
+
+def case_submitted(request):
+    return render(request, 'case_submitted.html')
