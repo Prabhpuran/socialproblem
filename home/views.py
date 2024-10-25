@@ -13,7 +13,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('home')
+            return redirect('dashboard.html')
     else:
         form = CustomUserCreationForm()
     return render(request, 'register.html', {'form': form})
@@ -21,18 +21,16 @@ def register(request):
 # User login view
 def user_login(request):
     if request.method == 'POST':
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
+            username = request.POST['username']
+            password = request.POST['password']
             user = authenticate(request, username=username, password=password)
             # return redirect('dashboard.html')
             if user is not None:
                 login(request, user)
-                return redirect('login.html')
-    else:
-        form = AuthenticationForm()
-    return render(request, 'login.html', {'form': form})
+                return redirect('home')
+    # else:
+    #     form = AuthenticationForm()
+    return render(request, 'login.html')
 
 # A protected view that requires login
 @login_required
@@ -40,10 +38,9 @@ def dashboard(request):
     return render(request, 'dashboard.html')
 
 @login_required
-@require_POST
 def user_logout(request):
     logout(request)
-    return redirect('login.html')
+    return redirect('login')
 
 # def register(request):
 #     if request.method == "POST":
