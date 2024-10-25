@@ -1,71 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-{% extends 'base.html' %}
-{% block content %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hopeline - Dashboard</title>
+  </head>
+  <body>
+    {% extends 'base.html' %} {% block content %}
+    <section class="text-gray-600 body-font">
+      <div
+        class="container mx-auto h-screen flex px-5 py-40 md:flex-row flex-col items-center"
+      >
+        <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+          <img
+            class="object-cover object-center rounded"
+            alt="hero"
+            src="/static/plain.png"
+          />
+        </div>
+        <div
+          class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center"
+        >
+          <h1
+            class="title-font sm:text-4xl text-3xl font-thin mb-4 uppercase tracking-wider text-gray-900"
+          >
+            Empowering <span class="text-indigo-500">Change</span>
+            <br class="hidden lg:inline-block" />
+            Inspiring <span class="text-indigo-500">Hope</span>
+          </h1>
+          <p class="mb-8 font-medium leading-relaxed">
+            Hopeline is dedicated to tackling social challenges by connecting
+            individuals, communities, and organizations with innovative
+            solutions. Together, we strive to build a brighter, more inclusive
+            future, where hope leads the way to lasting change.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="text-gray-600 body-font">
+      <center>
+        <h1
+          class="text-5xl tracking-widest font-thin uppercase text-indigo-500"
+        >
+          Our Team
+        </h1>
+      </center>
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-wrap -m-4">
+          <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
+            <div class="h-full text-center">
+              <img
+                alt="testimonial"
+                class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+                src="/static/gs.jpeg"
+              />
+              <p class="leading-relaxed text-justify">
+                Handling all the visual aspects of this project using
+                TailwindCSS for styling, alongside Font Awesome for icons and
+                fonts.
+              </p>
+              <span
+                class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"
+              ></span>
+              <h2
+                class="text-gray-900 font-medium title-font uppercase tracking-wider text-sm"
+              >
+                gurshabad singh
+              </h2>
+              <p class="text-gray-500">UI/UX Developer</p>
+            </div>
+          </div>
+          <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
+            <div class="h-full text-center">
+              <img
+                alt="testimonial"
+                class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+                src="/static/ps.jpeg"
+              />
+              <p class="leading-relaxed text-justify">
+                A Backend Developer skilled in Django and Python, adept at
+                designing robust server-side applications, ensuring seamless
+                database integration.
+              </p>
+              <span
+                class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"
+              ></span>
+              <h2
+                class="text-gray-900 font-medium title-font uppercase tracking-wider text-sm"
+              >
+                prabhpuran singh
+              </h2>
+              <p class="text-gray-500">Database Adminstrator</p>
+            </div>
+          </div>
+          <div class="lg:w-1/3 lg:mb-0 p-4">
+            <div class="h-full text-center">
+              <img
+                alt="testimonial"
+                class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+                src="/static/sm.jpeg"
+              />
+              <p class="leading-relaxed text-justify">
+                A creative leader with a keen eye for design, they have made
+                impactful contributions through unique themes and logo designs.
+              </p>
+              <span
+                class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"
+              ></span>
+              <h2
+                class="text-gray-900 font-medium title-font uppercase tracking-wider text-sm"
+              >
+                sanchita mahajan
+              </h2>
+              <p class="text-gray-500">Creative Officer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="text-gray-600 body-font relative">
+      <div class="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
+        <div
+          class="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative"
+        >
+          <iframe
+            width="100%"
+            height="100%"
+            class="absolute inset-0"
+            frameborder="0"
+            title="map"
+            marginheight="0"
+            marginwidth="0"
+            scrolling="no"
+            src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%amritsar+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+            style="filter: grayscale(1) contrast(1.2) opacity(0.4)"
+          ></iframe>
+          <div class="bg-white relative flex flex-wrap py-6 rounded shadow-md">
+            <div class="lg:w-1/2 px-6">
+              <h2
+                class="title-font font-semibold text-gray-900 tracking-widest text-xs"
+              >
+                ADDRESS
+              </h2>
+              <p class="mt-1">GNDU Main Campus, Amristar, Punjab 143001</p>
+            </div>
+            <div class="lg:w-1/2 px-6 mt-4 lg:mt-0">
+              <h2
+                class="title-font font-semibold text-gray-900 tracking-widest text-xs"
+              >
+                EMAIL
+              </h2>
+              <a class="text-indigo-500 leading-relaxed"
+                >timepasstechies@gmail.com</a
+              >
+              <h2
+                class="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4"
+              >
+                PHONE
+              </h2>
+              <p class="leading-relaxed">123-456-7890</p>
+            </div>
+          </div>
+        </div>
+        <form method="POST" class="flex">
+          <div
+            class="bg-gray-100 w-fit rounded-lg p-8 flex flex-col mt-10 md:mt-0"
+          >
+            <h2 class="text-gray-900 text-lg font-medium title-font mb-5">
+              Contact Us!
+            </h2>
+            {% csrf_token %}
 
-  <form method="POST">
+            <div class="relative mb-4">
+              <label for="id_username" class="leading-7 text-sm text-gray-600"
+                >Username</label
+              >
+              <input
+                type="text"
+                id="username"
+                name="username"
+                class="bg-white w-full rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+            </div>
+            <div class="relative mb-4">
+              <label for="email" class="leading-7 text-sm text-gray-600">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="bg-white w-full rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+            </div>
+            <div class="relative mb-4">
+              <label for="message" class="leading-7 text-sm text-gray-600">
+                Message
+              </label>
+              <textarea
+                type="message"
+                id="message"
+                name="message"
+                class="bg-white w-full rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+            >
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- <form method="POST">
       <div class="form-group">
         <label for="exampleInputfname">First Name</label>
-        <input type="text" class="form-control" id="fname">
-        <!-- small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small -->
+        <input type="text" class="form-control" id="fname" />
         <label for="exampleInputlname">Last Name</label>
-        <input type="text" class="form-control" id="lname">
+        <input type="text" class="form-control" id="lname" />
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+        />
       </div>
       <div class="form-group">
-          <label for="exampleInputPassword1">Contact</label>
-          <input type="number" class="form-control" id="exampleInputPassword1">
+        <label for="exampleInputPassword1">Contact</label>
+        <input type="number" class="form-control" id="exampleInputPassword1" />
       </div>
-      
-      <!-- div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div -->
       <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-{% endblock %}
-</body>
+    </form> -->
+    {% endblock %}
+  </body>
 </html>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <!-- a class="navbar-brand" href="#">HopeLine</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button -->
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="dropdown-menu" href="#">Case</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
