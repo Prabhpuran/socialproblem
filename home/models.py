@@ -38,3 +38,11 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return f"Message from {self.username}"
+
+class VolunteersEntry(models.Model):
+    username = models.CharField(max_length=100)
+    locality = models.TextField(max_length=200)
+    phone_no = models.CharField(max_length=13)
+    
+    def __str__(self):
+        return f"Message from {self.username}"

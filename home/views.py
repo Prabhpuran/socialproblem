@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from .forms import CaseForm
 from .forms import ContactForm
+from .forms import VolunteersForm
 from .models import EmergencyService
 from django.contrib import messages
 
@@ -109,3 +110,13 @@ def contact_us(request):
 @login_required
 def case_submitted(request):
     return render(request, 'case_submitted.html')
+
+def volunteers(request):
+    if request.method == 'POST':
+        form = VolunteersForm(request.POST)
+        if form.is_valid():
+            form.save(commit=False)
+            return redirect('volunteers_suceess')
+    else:
+        form = VolunteersForm()
+    return render(request, 'volunteers.html', {'form': form})

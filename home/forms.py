@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 #from django.contrib.auth.forms import UserCreationForm
 from .models import Case
 from .models import ContactMessage
+from .models import VolunteersEntry
 
 # class CustomUserCreationForm(UserCreationForm):
 #     email = forms.EmailField(required=True)
@@ -53,3 +54,8 @@ class ContactForm(forms.ModelForm):
     class Meta:
         model = ContactMessage
         fields = ['username', 'email', 'message']
+
+class VolunteersForm(forms.ModelForm):
+    class Meta:
+        model = VolunteersEntry
+        fields = ['username', 'locality', 'phone_no']
