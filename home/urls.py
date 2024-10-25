@@ -15,6 +15,4 @@ urlpatterns = [
     path("mental-tips/", views.mental_tips, name="mental_tips"),
     path("resources/", views.resources, name="resources"),
     path("volunteers/", views.volunteers, name="volunteers"),
-
-
 ]

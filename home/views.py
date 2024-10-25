@@ -5,7 +5,9 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from .forms import CaseForm
+from .forms import ContactForm
 from .models import EmergencyService
+from django.contrib import messages
 
 # User registration view
 def register(request):
@@ -91,5 +93,19 @@ def resources(request):
 def volunteers(request):
     return render(request, 'volunteers.html')
 
+def contact_us(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Your message has been sent successfully!")
+            return redirect('dashboard')
+
+    else:
+        form = ContactForm()
+    return render(request, 'dashboard.html', {'form': form})
+
+
+@login_required
 def case_submitted(request):
     return render(request, 'case_submitted.html')
