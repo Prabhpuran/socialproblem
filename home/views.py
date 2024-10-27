@@ -98,7 +98,7 @@ def contact_us(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()
+            form.save(commit=False)
             messages.success(request, "Your message has been sent successfully!")
             return redirect('dashboard')
 
