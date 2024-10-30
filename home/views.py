@@ -98,7 +98,7 @@ def contact_us(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save(commit=False)
+            ContactMessage = form.save(commit=False)
             messages.success(request, "Your message has been sent successfully!")
             return redirect('dashboard')
 
@@ -115,7 +115,7 @@ def volunteers(request):
     if request.method == 'POST':
         form = VolunteersForm(request.POST)
         if form.is_valid():
-            form.save(commit=False)
+            VolunteersEntry = form.save(commit=False)
             return redirect('volunteer_suceess')
     else:
         form = VolunteersForm()

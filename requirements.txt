@@ -8,3 +8,10 @@ Feature -
     authentication system
     a log of all th e emergency services such as health aid centers to contact during emergency
     
+
+To-do :
+Email to authorities using resend API
+SMS to authorities using Twilio API
+Tweet about the issue on twitter as well as tag the police/relavant personnel
+Make website more colourful
+AI to categorise to where to send this information
