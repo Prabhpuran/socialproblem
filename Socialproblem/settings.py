@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import environ
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,11 +27,17 @@ SECRET_KEY = 'django-insecure-yq@jms*%o$n1c=sd&lx3v(4_#_s_2j%u^_zjxzm8a1lbm$jwy1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'Prabhpuran.pythonanywhere.com',
-    '127.0.0.1'
-    ]
+ALLOWED_HOSTS = []
+env = environ.Env()
+environ.Env.read_env()
 
+TWILIO_ACCOUNT_SID = env("MY_ACCOUNT_SID")
+TWILIO_AUTH_TOKEN = env("TWILIO_AUTH_TOKEN")
+TWILIO_NUMBER = env("MY_TWILIO_NUMBER")
+SMS_BROADCAST_TO_NUMBERS = [
+   "+919463367887",
+   "+919501012675",
+ ]
 
 # Application definition
 
@@ -44,7 +51,8 @@ INSTALLED_APPS = [
     'home',
     'allauth',
     'allauth.account',
-    'allauth.socialaccount'
+    'allauth.socialaccount',
+    'features'
     
 ]
 
