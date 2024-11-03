@@ -10,8 +10,8 @@ Feature -
     
 
 To-do :
-Email to authorities using resend API
-SMS to authorities using Twilio API
+Email to authorities using mailjet API (Done)
+SMS to authorities using Twilio API (Done)
 Tweet about the issue on twitter as well as tag the police/relavant personnel
 Make website more colourful
 AI to categorise to where to send this information
