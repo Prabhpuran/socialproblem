@@ -19,6 +19,11 @@ load_dotenv()
 MAILJET_API_KEY = os.getenv("MAILJET_API_KEY")
 MAILJET_API_SECRET = os.getenv("MAILJET_API_SECRET")
 
+TWITTER_API_KEY = os.getenv("TWITTER_API_KEY")
+TWITTER_API_SECRET = os.getenv("TWITTER_API_SECRET")
+TWITTER_ACCESS_TOKEN = os.getenv("TWITTER_ACCESS_TOKEN")
+TWITTER_ACCESS_SECRET = os.getenv("TWITTER_ACCESS_SECRET")
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -102,6 +107,20 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'your_database_name',
+#         'ENFORCE_SCHEMA': False,
+#         'CLIENT': {
+#             'host': 'mongodb+srv://prabhpuran:1NXD7E4xmr17Nujd@cluster0.ug0m4.mongodb.net/', 
+#             # 'username': 'your_username',          # Optional, if MongoDB requires authentication
+#             # 'password': 'your_password',          # Optional, if MongoDB requires authentication
+#             # 'authSource': 'admin'                 # Optional, for authentication database
+#         }
+#     }
+# }
 
 
 # Password validation

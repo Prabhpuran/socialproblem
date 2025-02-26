@@ -2,8 +2,9 @@ from django.shortcuts import render
 from twilio.rest import Client
 from django.conf import settings                                                                                                                                                      
 from django.http import HttpResponse
-from .utils import send_mailjet_email
+from .utils import send_mailjet_email, post_tweet
 from django.http import JsonResponse
+from django.http import HttpResponse
 
 def broadcast_sms(request):
     message_to_broadcast = ("Thanks for using hopeline. We are glad to have you.")
@@ -29,4 +30,11 @@ def send_email_view(request):
 
     return JsonResponse(response, safe=False)
 
-
+def tweet_view(request):
+    content = request.GET.get("content", "Default tweet message")
+    
+    tweet_id = post_tweet(content)
+    if tweet_id:
+        return HttpResponse(f"Tweet posted successfully! Tweet ID: {tweet_id}")
+    else:
+        return HttpResponse("Failed to post tweet.")
